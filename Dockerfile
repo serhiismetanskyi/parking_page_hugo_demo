@@ -22,5 +22,5 @@ COPY . .
 
 EXPOSE 1313
 
-ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0", "--appendPort=false", "--disableFastRender", "--buildDrafts", "--buildFuture", "--buildExpired"]
+ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0", "--baseURL", "http://localhost:1313", "--appendPort=false", "--disableFastRender", "--buildDrafts", "--buildFuture", "--buildExpired"]
 
