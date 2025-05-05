@@ -1,0 +1,81 @@
+/* Покращені стилі для форми на головній сторінці */
+form[action*="formspree.io"] {
+  display: grid;
+  /* input ширша за кнопку: 3 частини проти auto */
+  grid-template-columns: 3fr auto;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "label label"
+    "input button";
+  gap: var(--gap);
+  max-width: 600px;
+  margin: var(--gap) auto var(--gap) 0;
+}
+
+form[action*="formspree.io"] label {
+  grid-area: label;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: calc(var(--gap) / 2);
+}
+
+form[action*="formspree.io"] input[type="email"] {
+  grid-area: input;
+  padding: calc(var(--gap) * 0.5) var(--gap);
+  border: none;
+  border-bottom: 2px solid #fff;
+  border-radius: var(--radius);
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  /* ensure entered text is white */
+  -webkit-text-fill-color: #fff;
+}
+
+form[action*="formspree.io"] input[type="email"]::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+form[action*="formspree.io"] input[type="email"]:-ms-input-placeholder {
+  color: #fff;
+}
+
+form[action*="formspree.io"] input[type="email"]::-ms-input-placeholder {
+  color: #fff;
+}
+
+form[action*="formspree.io"] input[type="email"]::-webkit-input-placeholder {
+  color: #fff;
+}
+
+form[action*="formspree.io"] button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* зменені внутрішні відступи для худішого вигляду */
+  padding: calc(var(--gap) * 0.5) var(--gap);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 9999px;
+  box-shadow: none;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  grid-area: button;
+}
+
+form[action*="formspree.io"] button[type="submit"]:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+form[action*="formspree.io"] button[type="submit"]:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: none;
+} 

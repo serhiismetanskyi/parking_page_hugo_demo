@@ -1,0 +1,23 @@
+baseURL: "http://localhost:1313/"
+languageCode: "en-us"
+title: "100dollarstoday.net"
+theme: "PaperMod"
+
+params:
+  mainSections:
+    - "post"
+  defaultTheme: "dark"
+  disableThemeToggle: true
+  dateFormat: "02 Jan 2006"
+  disableScrollToTop: true
+  hideFooter: false
+
+  footer:
+    hideCopyright: true
+    text: "[Blog](/post/)"
+
+menu:
+  main:
+    - name: "Buy this domain"
+      url: "/"
+      weight: 1

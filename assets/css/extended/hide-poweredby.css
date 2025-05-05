@@ -1,0 +1,4 @@
+ /* assets/css/extended/hide-poweredby.css */
+ .footer > span:last-child {
+    display: none !important;
+  }

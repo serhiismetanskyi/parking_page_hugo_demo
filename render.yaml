@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: hugo-site
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /status
