@@ -15,12 +15,12 @@ RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hug
     chmod +x /usr/local/bin/hugo && \
     rm -f hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz README.md LICENSE
 
-
 WORKDIR /app
 
 COPY . .
 
 EXPOSE 1313
 
-ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0", "--baseURL", "http://localhost:1313", "--appendPort=false", "--disableFastRender", "--buildDrafts", "--buildFuture", "--buildExpired"]
+ENV BASE_URL="http://localhost:1313"
 
+ENTRYPOINT ["sh", "-c", "hugo server --bind 0.0.0.0 --baseURL ${BASE_URL} --appendPort=false --disableFastRender --buildDrafts --buildFuture --buildExpired"]
